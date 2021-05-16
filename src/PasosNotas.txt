@@ -1,0 +1,7 @@
+Notas:
+
+-Diseñar las vistas (HTML, CSS)
+-Funcionalidad de agregar
+    - Donde almacenar (localStorage o directo en el dispositivo)
+-Funcionalidad de eliminar
+-Funcionalidad de editar
