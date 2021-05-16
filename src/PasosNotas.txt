@@ -5,3 +5,7 @@ Notas:
     - Donde almacenar (localStorage o directo en el dispositivo)
 -Funcionalidad de eliminar
 -Funcionalidad de editar
+
+URL de diseño:
+    https://app.diagrams.net/#G1KkljSriMitPylkf9EL3hqsexSj8Gfwv1
+
