@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  textoInput:string = "";
+  cont:number = 0;
+
   constructor() {}
 
+  addTarea(){
+    console.log("Boton pulsado")
+    localStorage.setItem('tarea'+this.cont, this.textoInput)
+    this.cont++;
+  }
 }
