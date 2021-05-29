@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,20 @@ export class HomePage {
   cont:number = 0;
   listaTareas = [];
 
-  constructor() {}
+  constructor(public mialerta: AlertController) {}
+
+  async monstrarAlerta(mensaje){
+
+    const alert = await this.mialerta.create({
+      cssClass: 'alerta-class',
+      header: 'Información',
+      message: mensaje,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+
+  }
 
   addTareaALista(textoTarea, idTarea){
     let objetoTarea={
@@ -22,9 +36,12 @@ export class HomePage {
   }
 
   addTarea(){
-    console.log("Boton pulsado")
-    localStorage.setItem('tarea'+this.cont, this.textoInput)
-    this.addTareaALista(this.textoInput, this.cont);
-    this.cont++;
+    if(this.textoInput.trim() == ""){
+      this.monstrarAlerta("El texto de tarea está vacío");
+    }else{
+      localStorage.setItem('tarea'+this.cont, this.textoInput)
+      this.addTareaALista(this.textoInput, this.cont);
+      this.cont++;
+    }
   }
 }
